@@ -1,0 +1,11 @@
+Mechanisms of Muscle Hypertrophy
+
+Muscle hypertrophy (growth) is generally understood to result from three overlapping mechanisms: mechanical tension (the force placed on muscle fibers during resistance exercise), metabolic stress (the buildup of metabolic byproducts during sustained muscular effort), and muscle damage (microscopic tears in muscle fibers that are repaired and rebuilt stronger).
+
+Mechanical tension is considered the primary driver among the three, meaning lifting reasonably heavy loads through a full range of motion is generally more important for growth than chasing extreme muscle soreness or fatigue for its own sake.
+
+Training volume (total sets performed per muscle group per week) is one of the most consistently supported variables for driving hypertrophy, with research generally showing a dose-response relationship up to a point, beyond which additional volume yields diminishing returns and increases injury/overtraining risk.
+
+Rep ranges across a wide spectrum (roughly 6-30 reps per set) can all produce meaningful hypertrophy as long as sets are taken reasonably close to muscular failure, challenging the older assumption that only a narrow "hypertrophy rep range" (8-12 reps) is effective.
+
+Muscle protein synthesis remains elevated for roughly 24-48 hours after a resistance training session, which is part of the biological basis for spacing training of the same muscle group a couple of days apart rather than training it daily.

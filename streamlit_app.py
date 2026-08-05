@@ -77,14 +77,21 @@ if user_query:
                 "can't provide individual medical diagnosis or treatment."
             )
         else:
-            with st.spinner("Researching..."):
-                request = ResearchRequest(query=user_query)
-                draft = researcher.handle(request)
-            with st.spinner("Double-checking the answer..."):
-                final = critic.review(draft)
-            answer = final.answer
-            if final.sources:
-                answer += "\n\n**Sources:** " + ", ".join(final.sources)
+            try:
+                with st.spinner("Researching..."):
+                    request = ResearchRequest(query=user_query)
+                    draft = researcher.handle(request)
+                with st.spinner("Double-checking the answer..."):
+                    final = critic.review(draft)
+                answer = final.answer
+                if final.sources:
+                    answer += "\n\n**Sources:** " + ", ".join(final.sources)
+            except Exception as e:
+                answer = (
+                    "Something went wrong while researching that question. "
+                    "This is usually temporary — please try again in a moment."
+                )
+                st.error(f"Debug info: {e}")
 
         st.markdown(answer)
         st.session_state.history.append({"role": "assistant", "content": answer})

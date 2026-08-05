@@ -24,6 +24,26 @@ def load_pipeline():
 router, researcher, critic = load_pipeline()
 
 st.title("🏋️ AI Fitness & Lifestyle Research Assistant")
+with st.sidebar:
+    st.header("📜 History")
+    if "history" in st.session_state and st.session_state.history:
+        # group into (question, answer) pairs
+        pairs = []
+        for i in range(0, len(st.session_state.history) - 1, 2):
+            if st.session_state.history[i]["role"] == "user":
+                pairs.append((st.session_state.history[i]["content"],
+                               st.session_state.history[i + 1]["content"]
+                               if i + 1 < len(st.session_state.history) else ""))
+        for i, (q, a) in enumerate(reversed(pairs), 1):
+            with st.expander(f"{len(pairs) - i + 1}. {q[:40]}{'...' if len(q) > 40 else ''}"):
+                st.markdown(f"**Q:** {q}")
+                st.markdown(f"**A:** {a}")
+        if st.button("🗑️ Clear history"):
+            st.session_state.history = []
+            st.rerun()
+    else:
+        st.caption("No questions asked yet this session.")
+        
 st.caption(
     "Ask a research-backed question about training, nutrition, sleep, or "
     "recovery. Answers are grounded in a curated document corpus — this "

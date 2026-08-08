@@ -89,7 +89,12 @@ if user_query:
             label = router.route(user_query)
 
         if label == "SMALL_TALK":
-            answer = "Hi! Ask me a fitness, nutrition, sleep, or recovery question and I'll dig into the research for you."
+            answer = (
+                "Hey! I'm here to help with research-backed fitness, "
+                "nutrition, sleep, and recovery questions. Try asking "
+                "something like *'How much protein do I need for strength "
+                "training?'* or *'What's the ideal rest day frequency?'*"
+            )
         elif label == "OUT_OF_SCOPE":
             answer = (
                 "That's outside what I can help with — I'm scoped to "

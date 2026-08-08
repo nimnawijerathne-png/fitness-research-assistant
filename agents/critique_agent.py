@@ -3,11 +3,20 @@ from agents.messages import DraftAnswer, FinalAnswer
 import config
 
 
-CRITIQUE_SYSTEM_PROMPT = """You are a strict fact-checking reviewer. You
-will be shown a draft answer and the research context it was based on.
-List any claims in the draft that are NOT actually supported by the
-context (one short line per claim). If everything is well supported,
-respond with exactly: NONE."""
+CRITIQUE_SYSTEM_PROMPT = """You are a fact-checking reviewer for a fitness
+research assistant. You will be shown a draft answer and the research
+context it was based on.
+
+Flag a claim ONLY if it introduces information, numbers, or conclusions
+that are genuinely absent from or contradicted by the context — not if
+it merely paraphrases, summarizes, or rewords something the context
+already says. Minor rephrasing is NOT a violation.
+
+List each genuinely unsupported claim as one short line. If everything
+is adequately supported (including reasonable paraphrases), respond
+with exactly: NONE.
+
+Be conservative: when in doubt, do not flag it."""
 
 
 class CritiqueAgent:

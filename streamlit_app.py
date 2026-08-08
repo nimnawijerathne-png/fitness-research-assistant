@@ -23,7 +23,14 @@ def load_pipeline():
 
 router, researcher, critic = load_pipeline()
 
-st.title("🏋️ AI Fitness & Lifestyle Research Assistant")
+title_col, button_col = st.columns([5, 1])
+with title_col:
+    st.title("🏋️ AI Fitness & Lifestyle Research Assistant")
+with button_col:
+    st.write("")  # small vertical spacer to align the button with the title
+    if st.button("🧹 Clear chat"):
+        st.session_state.history = []
+        st.rerun()
 with st.sidebar:
     st.header("📜 History")
     if "history" in st.session_state and st.session_state.history:

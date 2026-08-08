@@ -67,6 +67,19 @@ for turn in st.session_state.history:
 user_query = st.chat_input("Ask a question...")
 
 if user_query:
+    user_query = user_query.strip()
+
+    if not user_query:
+        st.warning("Please type an actual question before sending.")
+        st.stop()
+
+    if len(user_query) > 500:
+        st.warning(
+            "That question is quite long (over 500 characters). "
+            "Please shorten it so the assistant can process it effectively."
+        )
+        st.stop()
+
     st.session_state.history.append({"role": "user", "content": user_query})
     with st.chat_message("user"):
         st.markdown(user_query)

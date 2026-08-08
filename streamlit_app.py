@@ -120,3 +120,10 @@ if user_query:
 
         st.markdown(answer)
         st.session_state.history.append({"role": "assistant", "content": answer})
+        
+        st.divider()
+st.caption(
+    "⚠️ This tool provides general, research-informed information only. "
+    "It is not a substitute for personalized advice from a doctor, "
+    "registered dietitian, or certified fitness professional."
+)
